@@ -1,0 +1,60 @@
+{
+  "obj":[
+    {
+      "img":"images/2.jpg",
+      "title":"纯棉老是一副很美的样子淘宝美图",
+      "price":100,
+      "you":0
+    },
+    {
+      "img":"images/3.jpg",
+      "title":"纯棉老是一副很美的样子淘宝美图02",
+      "price":110,
+      "you":1
+    }
+  ,
+    {
+      "img":"images/1.jpg",
+      "title":"纯棉老是一副很美的样子淘宝美图02",
+      "price":110,
+      "you":1
+    }
+  ,
+    {
+      "img":"images/4.jpg",
+      "title":"纯棉老是一副很美的样子淘宝美图02",
+      "price":110,
+      "you":1
+    },
+    {
+      "img":"images/5.jpg",
+      "title":"纯棉老是一副很美的样子淘宝美图02",
+      "price":110,
+      "you":1
+    },
+    {
+      "img":"images/4.jpg",
+      "title":"纯棉老是一副很美的样子淘宝美图02",
+      "price":110,
+      "you":0
+    }
+  ,
+    {
+      "img":"images/1.jpg",
+      "title":"纯棉老是一副很美的样子淘宝美图02",
+      "price":110,
+      "you":0
+    }
+  ,
+    {
+      "img":"images/1.jpg",
+      "title":"纯棉老是一副很美的样子淘宝美图02",
+      "price":110,
+      "you":0
+    }
+
+
+
+
+  ]
+}

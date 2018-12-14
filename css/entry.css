@@ -1,0 +1,286 @@
+body,h1,h2,h3,h4,h5,h6,p,hr,ul,ol,dl,dd,input,textarea,option,th,td,fieldset,legend{margin:0; padding:0;}
+li{list-style:none;}
+a{text-decoration:none;color:#6c6c6c; }
+img{border:none; display:block;}
+input,a{outline:none;border:none;}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:normal;}
+em,i{font-style:normal;}
+.clear:after{content:"."; display:block; clear:both; height:0; visibility:hidden;}
+.clear{zoom:1;}
+*{
+    box-sizing: border-box;
+}
+
+.head{
+    width: 1200px;
+    height: 88px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.headlogo{
+    display: inline-block;
+   font-size: 110px;
+    float: left;
+    color:#ff4400;
+}
+.attion{
+    width: 900px;
+    height: 28px;
+    border: 1px solid #ffb4a8;
+    background: #f2f2f2;
+    color:#6c6c6c;
+    line-height: 28px;
+    text-align: center;
+    font-size: 11px;
+    margin: 22px 0 13px 95px;
+    float: left;
+}
+.headr{
+    width: 127px;
+    height: 16px;
+    float: right;
+    margin-bottom: 6px;
+}
+.information{
+    display: inline-block;
+    font-size:18px;
+    color:#ff4400;
+    float: left;
+}
+.headdl{
+   font-size: 12px;
+    color: #666666;
+    float: right;
+}
+.banner{
+    height: 600px;
+    width: 100%;
+    background: url("../images/denglu.jpg") no-repeat center;
+}
+.layout{
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+}
+.oinput{
+    width: 350px;
+    height: 350px;
+    background:#e9e9f2;
+    float: right;
+    margin: 120px 60px 0 0;
+    position: relative;
+}
+#saoma{
+    position: absolute;
+    left: 149px;
+    top: 5px;
+}
+#erweima{
+    position: absolute;
+    left: 293px;
+    top:5px;
+}
+/*登录页2*/
+#entryboxes{
+    width: 350px;
+    height: 350px;
+    background:#e9e9f2;
+    float: right;
+    margin: 120px 60px 0 0;
+    position: relative;
+    display: none;
+}
+#dianshi{
+    position: absolute;
+    left: 293px;
+    top:5px;
+}
+.safe{
+    font-size: 15px;
+    color: #3c3c3c;
+    font-weight: 900;
+    padding: 35px 0 30px 25px;
+}
+.ewmbox{
+    width: 140px;
+    height: 140px;
+    padding: 25px;
+    margin: 0 0 25px 105px;
+    background: #fff;
+}
+.saomiao{
+    font-size: 30px;
+    color: #fd6100;
+    float: left;
+}
+.smallbox{
+    width: 180px;
+    height: 35px;
+    margin: 0 90px 32px 83px;
+}
+.open_k{
+    color: #9c9c9c;
+    font-size: 11px;
+}
+.pass{
+    font-size: 11px;
+    color: #6c6c6c;
+}
+.mima{
+    margin-right:14px ;
+}
+.phonebox{
+    margin:-5px 0 0 12px;
+}
+.phone{
+    color: #ff4400;
+    font-size: 11px;
+}
+.last_dl{
+    color: #6c6c6c;
+    font-size: 11px;
+}
+li{
+    float: left;
+}
+.pass{
+ margin: 0 0 27px 205px;
+}
+
+.oinput>p{
+    font-size: 14px;
+    color: #3c3c3c;
+    font-weight: 900;
+    padding: 35px 0 30px 25px;
+}
+
+.put{
+    width: 300px;
+    height: 40px;
+    overflow: hidden;
+    margin :0 0 20px 25px;
+    /*border:1px solid #dddddd;*/
+}
+.names{
+    width: 258px;
+    height: 40px;
+    float: left;
+    padding-left: 9px;
+    border: 1px solid #dddddd;
+}
+.putL{
+    width: 42px;
+    height: 42px;
+    background: #dddddd;
+    float: left;
+    text-align: center;
+    line-height: 42px;
+}
+.denglu{
+    width: 300px;
+    height: 40px;
+    background: #ff4400;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 25px;
+}
+.denglu>a{
+    font-size: 14px;
+    color: #fff;
+}
+.weibo{
+    width: 220px;
+    height: 18px;
+    margin: 23px 0 27px 25px;
+}
+.weibo>li{
+    float:left;
+    margin-right: 24px;
+}
+.weibo li .weibo_1{
+    font-size: 17px;
+    color: #e52425;
+}
+.weibo li .weibo_2{
+    font-size: 17px;
+    color: #1ba9ee;
+}
+.weibo li span{
+    font-size: 11px;
+    color: #6c6c6c;
+}
+.forget{
+    height: 11px;
+    padding-left: 130px;
+}
+.forget li{
+    float: left;
+    margin-right: 14px;
+}
+.forget li a{
+    font-size: 11px;
+    color: #6c6c6c;
+    float: left;
+}
+.foote{
+    width: 1200px;
+    height: 59px;
+    margin: 0 auto;
+    border-bottom: 1px solid #dddddd;
+}
+.foot{
+    width: 1200px;
+    height: 40px;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #6c6c6c;
+    padding: 14px 0 14px 10px;
+    border-bottom: 1px solid #dddddd;
+}
+.foot>li{
+    height: 13px;
+    padding: 0 9px 0 10px;
+    border-right: 1px solid #e3dde3;
+    float: left;
+}
+.foot .chubor{
+    border-right: none;
+}
+.yejiao{
+    width: 1190px;
+    height: 27px;
+    margin: 0 auto;
+    line-height: 27px;
+    font-size: 11px;
+    color: #6c6c6c;
+}
+.yejiao>li{
+    float: left;
+    margin-left: 15px;
+}
+.yejiao .fighting{
+    color: #9c9c9c;
+}
+.lastfoot{
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 12px;
+    height: 90px;
+    background: #ffffff;
+}
+.lastfoot li{
+    float: left;
+    font-size: 11px;
+    color: #9c9c9c;
+    padding:0 8px;
+    border-right: 1px solid #e3dde3 ;
+}
+.lastfoot .chu{
+    border-right: none;
+}
+
+
+
+
+
+

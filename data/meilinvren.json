@@ -1,0 +1,51 @@
+{
+  "obj":{
+    "text":"美丽女人",
+    "bai":"败家不是罪",
+    "img":"images/1.jpg",
+    "title":"女人",
+    "list":[
+      {
+        "black":"裙子",
+        "q":"b"
+      },
+      {
+        "black":"连衣裙2",
+        "q":"g"
+      },
+      {
+        "black":"连衣裙3",
+        "q":"g"
+      },{
+        "black":"连衣裙4",
+        "q":"g"
+      },{
+        "black":"连衣裙5",
+        "q":"g"
+      },
+      {
+        "black":"真丝6",
+        "q":"r"
+      }
+
+    ],
+    "date":[
+      {"wenzi":"丝滑柔然 送人玫瑰手有余香",
+        "img":"images/4.jpg"
+      },{"wenzi":"丝滑柔然 送人玫瑰手有余香",
+        "img":"images/3.jpg"
+      },{"wenzi":"丝滑柔然 送人玫瑰手有余香",
+        "img":"images/2.jpg"
+      },
+      {"wenzi":"丝滑柔然 送人玫瑰手有余香",
+        "img":"images/1.jpg"
+      },
+      {"wenzi":"丝滑柔然 送人玫瑰手有余香",
+        "img":"images/4.jpg"
+      },
+      {"wenzi":"丝滑柔然 送人玫瑰手有余香",
+        "img":"images/3.jpg"
+      }
+    ]
+  }
+}

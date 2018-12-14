@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>details</title>
+    <link rel="stylesheet" href="css/details.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        .tb-pic a {
+            display: table-cell;
+            text-align: center;
+        }
+
+        .tb-pic a img {
+            vertical-align: middle;
+        }
+        .tb-s40 img{
+            width: 60px;
+            height: 60px;
+        }
+        .tb-pic a {
+            *display: block;
+            *font-family: Arial;
+            *line-height: 1;
+        }
+
+        .tb-thumb {
+            margin: 10px 0 0;
+            overflow: hidden;
+        }
+
+        .tb-thumb li {
+            background: none repeat scroll 0 0 transparent;
+            float: left;
+            height: 60px;
+            margin: 0 6px 0 0;
+            overflow: hidden;
+            padding: 1px;
+        }
+
+        .tb-s310, .tb-s310 a {
+            height: 310px;
+            width: 310px;
+        }
+
+        .tb-s310, .tb-s310 img {
+            height: 378px;
+            width: 333px;
+        }
+
+        .tb-s310 a {
+            *font-size: 271px;
+        }
+
+        .tb-s40 a {
+            *font-size: 35px;
+        }
+
+        .tb-s40, .tb-s40 a {
+            height: 60px;
+            width: 60px;
+        }
+
+        .tb-booth {
+            border: 1px solid #CDCDCD;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tb-thumb .tb-selected {
+            height: 60px;
+        }
+
+        .tb-thumb .tb-selected div {
+            background-color: #FFFFFF;
+            border: medium none;
+        }
+
+        .tb-thumb li div {
+            border: 1px solid #CDCDCD;
+        }
+
+        div.zoomDiv {
+            z-index: 999;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 300px;
+            background: #ffffff;
+            border: 1px solid #CCCCCC;
+            display: none;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        div.zoomMask {
+            position: absolute;
+            background: url("images/mask.png") repeat scroll 0 0 transparent;
+            cursor: move;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+  <header class="head_box">
+      <ul class="head">
+          <ul class="head_L">
+              <li class="iconfont icon-homefill head_Lf"></li>
+              <li class="head_Ls"><a href="">天猫首页</a></li>
+              <li class="head_Lm"><a href="">喵，欢迎来天猫</a></li>
+              <li class="head_Ls"><a href="html/entry.html">请登录</a></li>
+              <li class="head_Ls"><a href="login1.html">免费注册</a></li>
+          </ul>
+          <ul class="head_R">
+              <li class="head_Rzi">
+                  <a href="">我的淘宝</a>
+                  <div class="head_Rzi_hov">
+                      <a href="//trade.taobao.com/trade/itemlist/list_bought_items.htm?t=20110530">已买到的宝贝</a>
+                      <a href="//trade.taobao.com/trade/itemlist/list_sold_items.htm?t=20110530">已卖出的宝贝</a>
+                  </div>
+              </li>
+
+              <li class="iconfont icon-lower-triangle head_Rsj"></li>
+              <li class="iconfont icon-gouwuche4 head_Rred"></li>
+              <li class="head_Rzi head_Rm"><a href="">购物车0件</a></li>
+              <li class="head_Rzi">
+                  <a href="">收藏夹</a>
+                  <div class="head_Rzi_hov">
+                      <a href="//trade.taobao.com///shoucang.taobao.com/item_collect.htm">收藏的宝贝</a>
+                      <a href="////shoucang.taobao.com/shop_collect_list.htm">收藏的店铺</a>
+                  </div>
+              </li>
+              <li class="iconfont icon-lower-triangle head_Rsj"></li>
+              <li class="iconfont icon-start head_Rsj"></li>
+              <li class="iconfont icon-shouji1 head_Rred"></li>
+              <li class="head_Rzi head_Rm">
+                  <a href="">手机版</a>
+                  <div class="head_Rm_hov">
+                      <img src="images/images/hover_03.png" alt="">
+                  </div>
+              </li>
+              <li class="head_Rzi head_Rm"><a href="">淘宝网</a></li>
+              <li class="head_Rzi"><a href="">商家支持</a>
+                  <ul class="head_Rzi_hom">
+                    <li class="head_Rzi_hom_box">
+                        <h3>商家：</h3>
+                        <a href="">商家中心</a>
+                        <a href="" class="home_zho">商家中心</a>
+                        <a href="">商家入驻</a>
+                        <a href="" class="home_zho">运营服务</a>
+                        <a href="">商家品控</a>
+                        <a href="" class="home_zho">商家工具</a>
+                        <a href="">天猫智库</a>
+                        <a href="" class="home_zho">喵言喵语</a>
+                    </li>
+                      <li>
+                          <h3>帮助：</h3>
+                          <a href="">帮助中心</a>
+                          <a href="" class="home_zho">问商友</a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="iconfont icon-lower-triangle head_Rsj"></li>
+              <li class="iconfont icon-danlieliebiao head_Rred"></li>
+              <li class="head_Rzi">网站导航</li>
+              <li class="iconfont icon-lower-triangle head_Rsj"></li>
+          </ul>
+      </div>
+      </ul>
+  </header>
+  <!-- 右侧黑条定位 -->
+<div id="black_box">
+    <div id="black_gwc">
+        <a href="www.baidu.com">
+        <li class="iconfont icon-caigou-xianxing"></li>
+        <p>购</p>
+        <p>物</p>
+        <p>车</p>
+        </a>
+    </div>
+    <div id="black_qxc">
+    <li class="iconfont icon-plane wdzc_box"><span id="wdzc">我的资产</span></li>
+    <li class="iconfont icon-favfill wkgd_box"><span id="wkgd">我看过的</span></li>
+    <li class="iconfont icon-jijiangdaozhang wdsc_box"><span id="wdsc">我的收藏</span></li>
+    </div>
+    <div id="black_zhl">
+    <li class="iconfont icon-fenlei yhfk_box"><span id="yhfk">用户反馈</span></li>
+    <li class="iconfont icon-tongbushoucang ysewm_box">
+        <img src="images/images/hover_03.png" alt="" id="ysewm">
+    </li>
+    <li class="iconfont icon-jiangli2 mygod_box"><span id="mygod">我的天呐</span></li>
+    </div>
+</div>
+
+<!--天猫美妆-->
+<div class="banner_box">
+    <div class="banner">
+        <div class="img_box">
+            <img src="images/images/TB1.png" alt="">
+        </div>
+        <div class="strong_box">
+            <strong><a href="">GIORGIO ARMANI阿玛尼美妆官方旗舰店</a></strong>
+            <span class="zhixiao">品牌直销</span>
+            <a href=""><span class="iconfont icon-xiaohongdian2 kefu"></span></a>
+        </div>
+        <div class="discribe">
+            <div>
+                <span>描述</span>
+                <span>服务</span>
+                <span>物流</span>
+            </div>
+            <span>4.9</span><span class="iconfont icon-shangjiantou1"></span>
+            <span>4.8</span><span class="iconfont icon-shangjiantou1"></span>
+            <span>4.8</span><span class="iconfont icon-shangjiantou1"></span>
+            <li class="iconfont icon-lower-triangle"></li>
+        </div>
+        <div class="phone_box">
+            <div>手机逛</div>
+            <img src="images/images/erweima7.png" alt="">
+            <span class="iconfont icon-lower-triangle"></span>
+        </div>
+        <div class="input_boxes">
+
+            <div class="input_box">
+                <input type="text" placeholder="搜索 天猫 商品/品牌/店铺" id="input_kuang">
+                <ul id="serch_kuang2"></ul>
+            </div>
+
+            <button class="btn_f">搜天猫</button>
+            <button class="btn_s">搜本店</button>
+            <ul class="amani_box">
+                <li><a href="">阿玛尼</a></li>
+                <li><a href="">阿玛尼口红</a></li>
+                <li><a href="">口红</a></li>
+                <li><a href="">小胖丁</a></li>
+                <li><a href="">染唇液</a></li>
+                <li class="borde"><a href="">阿玛尼小胖丁</a></li>
+            </ul>
+        </div>
+         <ul id="serch_kuang"></ul>
+    </div>
+</div>
+
+<!--阿玛尼美妆官方旗舰店-->
+<div class="picture">
+    <img src="images/images/TB2Q.png" alt="">
+</div>
+
+<!--首页-->
+<div class="first">
+    <ul>
+        <li><a href="">首页</a></li>
+        <li><a href="">所有产品</a></li>
+        <li><a href="">唇妆衣橱</a></li>
+        <li><a href="">粉装衣橱</a></li>
+        <li><a href="">经典红管</a></li>
+        <li><a href="">气垫</a></li>
+        <li><a href="">全新粉衣橱</a></li>
+    </ul>
+    <div>
+        <input type="text">
+        <span class="iconfont icon-sousuo2"></span>
+    </div>
+</div>
+<!--center-->
+<div class="center">
+    <div class="center_left">
+
+
+
+        <div id="donghua_box">
+            <div class="box">
+
+                <div class="tb-booth tb-pic tb-s310">
+                    <a href="images/01.jpg"><img src="images/01_mid.jpg" alt="美女" rel="images/01.jpg" class="jqzoom"/></a>
+                </div>
+                <ul class="tb-thumb" id="thumblist">
+                    <li class="tb-selected">
+                        <div class="tb-pic tb-s40"><a href="#"><img src="images/01_small.jpg" mid="images/01_mid.jpg"
+                                                                    big="images/01.jpg"></a></div>
+                    </li>
+
+                    <li>
+                        <div class="tb-pic tb-s40"><a href="#"><img src="images/02_small.jpg" mid="images/02_mid.jpg"
+                                                                    big="images/02.jpg"></a></div>
+                    </li>
+
+                    <li>
+                        <div class="tb-pic tb-s40"><a href="#"><img src="images/03_small.jpg" mid="images/03_mid.jpg"
+                                                                    big="images/03.jpg"></a></div>
+                    </li>
+
+                    <li>
+                        <div class="tb-pic tb-s40"><a href="#"><img src="images/04_small.jpg" mid="images/04_mid.jpg"
+                                                                    big="images/04.jpg"></a></div>
+                    </li>
+
+                    <li>
+                        <div class="tb-pic tb-s40"><a href="#"><img src="images/05_small.jpg" mid="images/05_mid.jpg"
+                                                                    big="images/05.jpg"></a></div>
+                    </li>
+
+                </ul>
+            </div>
+
+
+
+           <div class="miaoshu_wen">
+               <a href=""><span class="iconfont icon-social"></span></a>
+               <a href=""><span>分享</span></a>
+               <a href="" class="miaoshu_l"><span class="iconfont icon-favfill"></span></a>
+               <a href=""><span>收藏商品（24234541人气）</span></a>
+               <a href="" class="miaoshu_r"><span>举报</span></a>
+           </div>
+       </div>
+        <div class="center_left_c">
+            <h3 class="wzms_f"> 阿玛尼小胖丁哑光染唇液 持久显色 珊瑚色玫瑰豆沙506冒险枫红405 </h3>
+            <h4>赤色凝彩亚光</h4>
+            <div class="jiage_f"><span class="jiage_a">价格</span><span class="jiage_b">￥340.00</span></div>
+            <div class="dizhi_box">
+                <span class="yunfei_s">运费</span>
+                <span class="dizhi_s">杭州</span>
+                <span class="iconfont icon-down dianji_x"></span>
+            </div>
+            <div class="jifen_box">
+                <span class="pingjiazhi">累计评价</span>
+                <span class="pingjia_num">21456421</span>
+                <span class="jifenzhi">送天猫积分</span>
+                <span class="jifen_num">170</span>
+            </div>
+            <div class="qfdy">
+                <span class="colorful">颜色分类</span>
+                <ul class="yanse_boss">
+                    <li class="yansered_box">
+                         <span class="iconfont icon-likefill redd"></span>
+                        <span class="redd_m">506玫瑰豆沙</span>
+                    </li>
+                    <li class="yansered_box">
+                         <span class="iconfont icon-likefill redd"></span>
+                        <span class="redd_m">505红色经典</span>
+                    </li>
+                    <li class="yansered_box">
+                         <span class="iconfont icon-likefill redd"></span>
+                        <span class="redd_m">501红色珊瑚</span>
+                    </li>
+                    <li class="yansered_box">
+                         <span class="iconfont icon-likefill redd"></span>
+                        <span class="redd_m">503阿玛尼红</span>
+                    </li>
+                    <li class="yansered_box">
+                         <span class="iconfont icon-likefill redd"></span>
+                        <span class="redd_m">504玫瑰水粉</span>
+                    </li>
+                    <li class="yansered_box">
+                         <span class="iconfont icon-likefill redd"></span>
+                        <span class="redd_m">506金色凤凰</span>
+                    </li>
+                     <li class="yansered_box">
+                         <span class="iconfont icon-likefill redd"></span>
+                        <span class="redd_m">506金色凤凰</span>
+                    </li>
+                </ul>
+             </div>
+             <span class="number_box">数量</span>
+             <input type="text" id="number_zhi">
+             <span class="number_box">件</span>
+            <div class="gouwu_car">
+                 <li class="gouwu_cara"><a href="">立即购买</a></li>
+                 <li class="gouwu_carb"><a href=""><span class="iconfont icon-caigou-xianxing gouwu_carb"></span>加入购物车</a></li>
+             </div>
+             <ul class="fwcn_box">
+                 <li><a href="" class="fwcn_f">服务承诺</a></li>
+                 <li><a href="">过敏包退</a></li>
+                 <li><a href="">正品保证</a></li>
+                 <li><a href="">极速退款</a></li>
+                 <li><a href="">增运费险</a></li>
+                 <li><a href="">支付方式<span class="iconfont icon-down "></span></a></li>
+             </ul>
+             <p></p>
+        </div>
+    </div>
+    <div class="center_right">
+        <p>看了又看</p>
+        <li class="klyk_box">
+            <img src="images/images/O1CN01swd.jpg" alt="">
+            <p>￥310.00</p>
+            <h1>【正品】阿玛尼小细管唇膏 滋润保湿不脱色西柚色枫叶红201/400</h1>
+        </li>
+        <li class="klyk_box">
+            <img src="images/images/O1CN01swd.jpg" alt="">
+            <p>￥310:00</p>
+            <h1>【正品】阿玛尼小细管唇膏 滋润保湿不脱色西柚色枫叶红201/400</h1>
+        </li>
+        <li class="klyk_box">
+            <img src="images/images/O1CN01swd.jpg" alt="">
+            <p>￥310:00</p>
+            <h1>【正品】阿玛尼小细管唇膏 滋润保湿不脱色西柚色枫叶红201/400</h1>
+        </li>
+        <span class="iconfont icon-top"></span>
+        <span class="iconfont icon-down"></span>
+    </div>
+
+</div>
+
+<!--详情-->
+<div class="particular">
+    <div class="particular_left_box">
+        <div class="particular_left">
+            <h1>阿玛尼美妆官方旗舰店 <span class="iconfont icon-xiaoxi"></span></h1>
+            <div class="discribe discribe2">
+                <div>
+                    <span>描述</span>
+                    <span>服务</span>
+                    <span>物流</span>
+                </div>
+                <span>4.9</span><span class="iconfont icon-shangjiantou1"></span>
+                <span>4.8</span><span class="iconfont icon-shangjiantou1"></span>
+                <span>4.8</span><span class="iconfont icon-shangjiantou1"></span>
+            </div>
+            <div class="particular_left_bom">
+                <button class="bnt1">进店逛逛</button>
+                <button class="bnt2">收藏店铺</button>
+            </div>
+        </div>
+        <div class="zpbz">
+            <img src="images/images/zpbz.jpg" alt="">
+        </div>
+        <div>
+            <img src="images/images/TB2r9.jpg" alt="">
+        </div>
+        <div class="keycode">
+            <p>本店搜索</p>
+            <hr>
+            <div><span>关键字</span><input type="text" id="keys"></div>
+            <div><span>价格</span><input type="text" id="price_f">-<input type="text" id="price_l"></div>
+            <button>搜索</button>
+        </div>
+        <!--宝贝分类-->
+        <div class="baby_type">
+            <p class="baby_type_w">宝贝分类</p>
+            <hr>
+            <ul class="baby_type_kbox">
+                <li id="baby_type_k"></li>
+                <li class="baby_type_see">
+                    <a href="">查看所有宝贝</a>
+                </li>
+            </ul>
+            <ul class="clear_both">
+                <li><a href="">按综合</a></li>
+                <li><a href="">按新品</a></li>
+                <li><a href="">按销量</a></li>
+                <li><a href="">按价格</a></li>
+            </ul>
+            <ul class="baby_type_closebox">
+                <li class="baby_type_close"></li>
+                <li class="baby_type_chun">
+                    <a href="">唇妆衣橱</a>
+                </li>
+            </ul>
+            <ul class="baby_type_closebox">
+                <li class="baby_type_close"></li>
+                <li class="baby_type_chun">
+                    <a href="">粉妆衣橱</a>
+                </li>
+            </ul>
+            <ul class="baby_type_closebox">
+                <li class="baby_type_close"></li>
+                <li class="baby_type_chun">
+                    <a href="">香氛衣橱</a>
+                </li>
+            </ul>
+            <ul class="baby_type_closebox">
+                <li class="baby_type_close"></li>
+                <li class="baby_type_chun">
+                    <a href="">臻至护肤</a>
+                </li>
+            </ul>
+            <ul class="blackkey">
+                <li><a href="">黑钥匙系列</a></li>
+                <li><a href="">黑耀新机系列</a></li>
+                <li><a href="">粉嫩肌肤系列</a></li>
+            </ul>
+            <ul class="baby_type_closebox">
+                <li class="baby_type_close"></li>
+                <li class="baby_type_chun">
+                    <a href="">热卖套装</a>
+                </li>
+            </ul>
+            <ul class="baby_type_closebox">
+                <li class="baby_type_close"></li>
+                <li class="baby_type_chun">
+                    <a href="">眼妆衣橱</a>
+                </li>
+            </ul>
+        </div>
+        <div><a href=""><img src="images/images/TB2dB.jpg" alt=""></a></div>
+        <div><a href=""><img src="images/images/TB2T5.jpg" alt=""></a></div>
+        <div><a href=""><img src="images/images/TB2s.jpg" alt=""></a></div>
+        <div><a href=""><img src="images/images/TB2Gdt.jpg" alt=""></a></div>
+        <!--宝贝推荐-->
+        <div>
+            <div class="baby_tj">
+                <span><a href="" id="baby_tj_w">宝贝推荐</a></span>
+                <span><a href="" id="baby_tj_g">更多</a></span>
+            </div>
+            <hr>
+        </div>
+            <ul class="zp_box">
+                <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+                <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+                <span class="price_1">￥</span><span class="money_1">310.00</span>
+            </ul>
+
+            <ul class="zp_box">
+                <li class="zp"><img src="images/images/O1CN.jpg" alt=""></li>
+                <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+                <span class="price_1">￥</span><span class="money_1">310.00</span>
+            </ul>
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01o.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01pS.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+
+        <ul class="zp_box">
+            <li class="zp"><img src="images/images/O1CN01.jpg" alt=""></li>
+            <li class="zp_w"><a href="//detail.tmall.com/item.htm?id=561837524071">【正品】阿玛尼红管丝绒哑光唇釉 豆沙色烂番茄色口红</a></li>
+            <span class="price_1">￥</span><span class="money_1">310.00</span>
+        </ul>
+
+        <!--宝贝排行榜-->
+        <div id="baby_number">
+            <div class="baby_number_w">宝贝排行榜</div>
+            <ul>
+                <li id="baby_number_x">销售量</li>
+                <li id="baby_number_s">收藏数</li>
+            </ul>
+
+            <ul class="amn_box">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥310.00</p>
+                    <p class="AMNPHB_m">已售出39583453笔</p>
+                </li>
+            </ul>
+            <ul class="amn_box">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥310.00</p>
+                    <p class="AMNPHB_m">已售出39583453笔</p>
+                </li>
+            </ul>
+            <ul class="amn_box">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥310.00</p>
+                    <p class="AMNPHB_m">已售出39583453笔</p>
+                </li>
+            </ul>
+            <ul class="amn_box">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥310.00</p>
+                    <p class="AMNPHB_m">已售出39583453笔</p>
+                </li>
+            </ul>
+            <ul class="amn_box">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥310.00</p>
+                    <p class="AMNPHB_m">已售出39583453笔</p>
+                </li>
+            </ul>
+            <ul class="amn_boxb">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥210.00</p>
+                    <p class="AMNPHB_m">已售出395853笔</p>
+                </li>
+            </ul>
+            <ul class="amn_boxb">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥310.00</p>
+                    <p class="AMNPHB_m">已售出3453笔</p>
+                </li>
+            </ul>
+            <ul class="amn_boxb">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥310.00</p>
+                    <p class="AMNPHB_m">已售出53笔</p>
+                </li>
+            </ul>
+            <ul class="amn_boxb">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥310.00</p>
+                    <p class="AMNPHB_m">已售出453笔</p>
+                </li>
+            </ul>
+            <ul class="amn_boxb">
+                <li class="amn_pic"><img src="images/images/O1CN01cCq.jpg" alt=""></li>
+                <li class="AMNPHB">
+                    <p class="AMNPHB_n"><a href="">阿玛尼红管丝绒哑光唇釉正品口红 秋冬豆沙色烂番茄色405/400</a></p>
+                    <p class="AMNPHB_a">￥110.00</p>
+                    <p class="AMNPHB_m">已售出453笔</p>
+                </li>
+            </ul>
+            <div class="cheak_more">
+                <a href="#">查看更多宝贝</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 商品详情和累计评价部分 -->
+<div id="particular_center_box">
+    <div id="xiangqing_tou">
+        <div id="xqy_l" class="same">商品详情</div>
+        <div id="xqy_r" class="same">
+               <a href="javascript:;" class="ljpj">累计评价</a>
+               <a href="javascript:;" id="ljpj_shu">3247344</a>
+        </div>
+        <div id="xqy_h">
+            <span>手机购买</span>
+            <span class="iconfont icon-qr2 shouji_font"></span>
+            <span class="iconfont icon-down"></span>
+           <img src="images/images/TB1Ubuif_vI8KJjSspjwu3gjXXa.png" alt="">
+        </div>
+    </div>
+
+    <div id="jutixq_wenzi">
+        <p class="ppname">品牌名称：GIORGIO ARMANI/阿玛尼</p>
+        <p class="cpcs">产品参数：</p>
+        <ul class="jieshao_box">
+            <li>产品名称：GIORGIO ARMANI/阿玛尼 持...</li>
+            <li class="jianju">品牌: GIORGIO ARMANI/阿玛尼</li>
+            <li>唇彩/唇蜜单品: 持色凝彩哑光染唇液小胖丁</li>
+        </ul>
+        <ul class="jieshao_box">
+            <li>产地: 法国</li>
+            <li class="jianju">净含量: 3.9ml</li>
+            <li>颜色分类: 405冒险枫红  </li>
+        </ul>
+        <ul class="jieshao_box">
+            <li>批准文号: 国妆备进字J201610263</li>
+            <li class="jianju">功效: 持久</li>
+            <li>规格类型: 正常规格</li>
+        </ul>
+        <ul class="jieshao_box">
+            <li>是否为特殊用途化妆品: 否</li>
+            <li class="jianju">产品类别: 普通类</li>
+            <li>限期使用日期范围: 2020-03-01至2020-03-01</li>
+        </ul>
+        
+</div>
+        <div class="tupian_box">
+             <img src="images/images/TB1Vw1J790-120.jpg" alt="">
+             <img src="images/images/O1CN01b3527212490.jpg" alt="">
+             <img src="images/images/O1CN01pwrZSQ1UGSgCcP4B4_!!3527212490.jpg" alt="">
+             <img src="images/images/O1CN011UGSfkSWBm1e8aV_!!3527212490.jpg" alt="">
+             <img src="images/images/O1CN011UGSfhhlBkB8oQl_!!3527212490.jpg" alt="">
+
+             <img src="images/images/O1CN011UGSfi7YX7aEokE_!!3527212490.jpg" alt="">
+
+             <img src="images/images/O1CN011UGSfjDWJJcgIOV_!!3527212490.jpg" alt="">
+             <img src="images/images/O1CN011UGSfcviqV7bMnV_!!3527212490.jpg" alt="">
+             <img src="images/images/O1CN011UGSfhhletIrhwF_!!3527212490.jpg" alt="">
+
+             <img src="images/images/O1CN011UGSfi7YKhyEen1_!!3527212490.jpg" alt="">
+
+             <img src="images/images/O1CN011UGSfjA7m5in4M0_!!3527212490.jpg" alt="">
+
+             <img src="images/images/O1CN011UGSfjA86s5LppO_!!3527212490.jpg" alt="">
+
+             <img src="images/images/O1CN011UGSfjoBkmw7hFt_!!3527212490.jpg" alt="">///
+             <img src="images/images/O1CN011UGSfnT4Ntasabc_!!3527212490.jpg" alt="">
+
+             <img src="images/images/O1CN011UGSfowIZ8Extf8_!!3527212490 (1).jpg" alt="">
+
+         </div>
+</div>
+</div>
+
+    <!-- foot -->
+    <div class="footz">
+        <div class="foot">
+            <span>首页</span>
+            <span>手机专区</span>
+            <span>平板电脑</span>
+            <span>智能家居</span>
+            <span>精品配件</span>
+            <span>荣耀VIP</span>
+            <span>收藏赢好礼</span>
+        </div>
+    </div>
+    <div class="foot2">
+        <img src="images/xqy_foot_nav1.jpg" alt="">
+        <img src="images/xqy_foot2.jpg" alt="">
+    </div>
+    <div class="footerz">
+        <div class="footer">
+            <li>
+                <span>关于天猫</span>
+                <span>帮助中心</span>
+                <span>开放平台</span>
+                <span>诚聘英才</span>
+                <span>联系我们</span>
+                <span>网站合作</span>
+                <span>法律声明</span>
+                <span>隐私权政策</span>
+                <span>知识产权</span>
+                <span>廉政举报</span>
+            </li>
+            <li>
+                <span>阿里巴巴</span>
+                <span>淘宝</span>
+                <span>天猫</span>
+                <span>聚划算</span>
+                <span>全球通</span>
+                <span>1688</span>
+                <span>飞猪</span>
+                <span>阿里通信</span>
+                <span>高德</span>
+                <span>虾米</span>
+            </li>
+            <li>
+                <span>增值电信业务经营许可证： 浙B2-20110446</span>
+                <span> 市场名称登记证：工商网市字3301004119号</span>
+                <span> 出版物网络交易平台服务经营备案证： 新出发浙备字第001号 </span>
+            </li>
+            <li>
+                <span>互联网违法和不良信息举报电话：0571-81683755 blxxjb@alibaba-inc.com</span>
+                <span>互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005</span>
+                <span>浙公网安备 33010002000120号</span>
+            </li>
+            <li>
+                <span>医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00002号</span>
+                <span>互联网药品交易服务资格证书：国A20150001</span>
+            </li>
+            <li>
+                <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33010002</span>
+                <span> 12318举报</span>
+            </li>
+            <li>
+                <span>&copy;2003-2018 TMALL.COM 版权所有</span>
+            </li>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/details.js"></script>
+<script src="js/jquery.imagezoom.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".jqzoom").imagezoom();
+        $("#thumblist li a").click(function () {
+            $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
+            $(".jqzoom").attr('src', $(this).find("img").attr("mid"));
+            $(".jqzoom").attr('rel', $(this).find("img").attr("big"));
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
